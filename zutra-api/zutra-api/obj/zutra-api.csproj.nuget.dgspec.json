@@ -4,14 +4,14 @@
     "/zutra/zutra-api/zutra-api/zutra-api.csproj": {}
   },
   "projects": {
-    "/zutra/zutra-api/zutra-api/zutra-api.csproj": {
+    "/zutra/zutra-api/LibAllOver/LibAllOver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/zutra/zutra-api/zutra-api/zutra-api.csproj",
-        "projectName": "zutra-api",
-        "projectPath": "/zutra/zutra-api/zutra-api/zutra-api.csproj",
+        "projectUniqueName": "/zutra/zutra-api/LibAllOver/LibAllOver.csproj",
+        "projectName": "LibAllOver",
+        "projectPath": "/zutra/zutra-api/LibAllOver/LibAllOver.csproj",
         "packagesPath": "/home/chaosmac/.nuget/packages/",
-        "outputPath": "/zutra/zutra-api/zutra-api/obj/",
+        "outputPath": "/zutra/zutra-api/LibAllOver/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/chaosmac/.nuget/NuGet/NuGet.Config"
@@ -37,10 +37,74 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/zutra/zutra-api/zutra-api/zutra-api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/zutra/zutra-api/zutra-api/zutra-api.csproj",
+        "projectName": "zutra-api",
+        "projectPath": "/zutra/zutra-api/zutra-api/zutra-api.csproj",
+        "packagesPath": "/home/chaosmac/.nuget/packages/",
+        "outputPath": "/zutra/zutra-api/zutra-api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/chaosmac/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/zutra/zutra-api/LibAllOver/LibAllOver.csproj": {
+                "projectPath": "/zutra/zutra-api/LibAllOver/LibAllOver.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.13.0-beta1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "YamlDotNet": {
+              "target": "Package",
+              "version": "[11.0.1, )"
             }
           },
           "imports": [

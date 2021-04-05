@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zutra-api", "zutra-api\zutra-api.csproj", "{72ADC343-6121-4838-AD82-52C363CD9D26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibAllOver", "LibAllOver\LibAllOver.csproj", "{51E34EBC-7F8C-4356-BC31-DF2D5558FF2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{72ADC343-6121-4838-AD82-52C363CD9D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72ADC343-6121-4838-AD82-52C363CD9D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72ADC343-6121-4838-AD82-52C363CD9D26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51E34EBC-7F8C-4356-BC31-DF2D5558FF2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E34EBC-7F8C-4356-BC31-DF2D5558FF2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E34EBC-7F8C-4356-BC31-DF2D5558FF2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E34EBC-7F8C-4356-BC31-DF2D5558FF2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
