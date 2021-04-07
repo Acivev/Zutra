@@ -1,20 +1,74 @@
 import React from "react";
 
 
-export interface IPropsPageSINavbarAdmin {
+export interface IPropsSINavbarAdmin {
+    MobileMode: boolean
+}
+
+export interface IStateSINavbarAdmin {
 
 }
 
-export interface IStatePageSINavbarAdmin{
-
-}
-
-export class SINavbarAdmin extends React.Component<IPropsPageSINavbarAdmin, IStatePageSINavbarAdmin> {
-    constructor(props: IPropsPageSINavbarAdmin) {
+export class SINavbarAdmin extends React.Component<IPropsSINavbarAdmin, IStateSINavbarAdmin> {
+    constructor(props: IPropsSINavbarAdmin) {
         super(props);
     }
 
-    render() {
+    private getMobile() {
+        return (
+            <div
+                style={{
+                    whiteSpace: "nowrap",
+                    position: "fixed",
+                    minWidth: "100%",
+                    zIndex: 1000,
+                    background: "#1b2528",
+                    boxShadow: "0 1px 3px #0e0e0e, #101010",
+                    boxSizing: "border-box",
+                    lineHeight: "1.6",
+                    color: "#333333",
+                    fontSize: "16px",
+                    fontWeight: "bold",
+                    padding: 10,
+
+
+                }}>
+
+                <div style={{textAlign: "right"}}>
+                    <img style={{
+                        width: 40,
+                        marginBottom: "0.25em",
+
+                    }} src={process.env.PUBLIC_URL + "/imgs/burgerOpen.png"}/>
+
+                    {/*TODO Lambda | Burger Click Open*/}
+                    {/*<img style={{*/}
+                    {/*    width: 40,*/}
+                    {/*    marginBottom: "0.25em",*/}
+                    {/*}} src={process.env.PUBLIC_URL + "/imgs/burgerClose.png"}/>*/}
+                </div>
+
+                {/*TODO Lambda | Burger Click Close*/}
+                <div style={{color: "white", textAlign: "center", listStyleType: "none", fontSize: 25, fontWeight: 500}}>
+                    <li style={{margin: 15}}>
+                        <p style={{textDecoration: "underline"}}>
+                            <a style={{color: "#ffd874"}}>Lambda</a>
+                        </p>
+
+                    </li>
+                    <li style={{margin: 15}}><a style={{margin: 5}}>Cards</a></li>
+                    <li style={{margin: 15}}><a style={{margin: 5}}>Mode</a></li>
+                    <li style={{margin: 15}}><a style={{margin: 5}}>Help</a></li>
+                    <li style={{margin: 15}}><a style={{margin: 5}}>Admin</a></li>
+                    <li style={{margin: 15}}><a style={{margin: 5}}>Logout</a></li>
+
+                </div>
+            </div>
+
+        );
+    }
+
+    private getDesktop() {
         return (
             <div
                 style={{
@@ -218,6 +272,13 @@ export class SINavbarAdmin extends React.Component<IPropsPageSINavbarAdmin, ISta
                     </div>
                 </div>
             </div>
+
         );
+    }
+
+    render() {
+        if (this.props.MobileMode)
+            return this.getMobile();
+        return this.getDesktop();
     }
 }

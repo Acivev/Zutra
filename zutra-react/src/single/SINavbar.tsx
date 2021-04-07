@@ -1,33 +1,44 @@
 import React from "react";
 
-export interface IPropsPageSINavbar { }
 
-export interface IStatePageSINavbar { }
+export interface IPropsSINavbar {
+    MobileMode: boolean
+}
 
-export class SINavbar extends React.Component<IPropsPageSINavbar, IStatePageSINavbar> {
-    constructor(props: IPropsPageSINavbar) {
+export interface IStateSINavbar{
+
+}
+
+export class SINavbar extends React.Component<IPropsSINavbar, IStateSINavbar> {
+    constructor(props: IPropsSINavbar) {
         super(props);
     }
 
-    render() {
+    private getMobile(){
         return (
+            <div></div>
+        );
+    }
+
+    private getDesktop(){
+        return(
             <div
-                 style={{
-                     textAlign: "center",
-                     whiteSpace: "nowrap",
-                     position: "fixed",
-                     minWidth: "100%",
-                     zIndex: 1000,
-                     background: "#1b2528",
-                     boxShadow: "0 1px 3px #0e0e0e, #101010",
-                     boxSizing: "border-box",
-                     lineHeight: "1.6",
-                     color: "#333333",
-                     fontSize: "16px",
-                     fontWeight: "bold",
+                style={{
+                    textAlign: "center",
+                    whiteSpace: "nowrap",
+                    position: "fixed",
+                    minWidth: "100%",
+                    zIndex: 1000,
+                    background: "#1b2528",
+                    boxShadow: "0 1px 3px #0e0e0e, #101010",
+                    boxSizing: "border-box",
+                    lineHeight: "1.6",
+                    color: "#333333",
+                    fontSize: "16px",
+                    fontWeight: "bold",
 
 
-                 }}>
+                }}>
 
                 <div style={{
                     position: "relative",
@@ -49,6 +60,7 @@ export class SINavbar extends React.Component<IPropsPageSINavbar, IStatePageSINa
                                 display: "inline-block", listStyle: "none", margin: 0,
                                 padding: 0, boxSizing: "border-box", whiteSpace: "nowrap", textAlign: "center"
                             }}>
+
                                 <li
                                     style={{
                                         cursor: "pointer",
@@ -63,14 +75,14 @@ export class SINavbar extends React.Component<IPropsPageSINavbar, IStatePageSINa
 
                                     }}>
                                     <a
-                                       style={{
-                                           color: "#ffffff",
-                                           padding: ".5em 1em",
-                                           display: "block",
-                                           whiteSpace: "nowrap",
-                                           lineHeight: 1.6,
-                                           fontSize: "16px"
-                                       }}>
+                                        style={{
+                                            color: "#ffffff",
+                                            padding: ".5em 0.4em",
+                                            display: "block",
+                                            whiteSpace: "nowrap",
+                                            lineHeight: 1.6,
+                                            fontSize: "16px"
+                                        }}>
                                         <b> Login </b>
                                     </a>
                                 </li>
@@ -78,7 +90,6 @@ export class SINavbar extends React.Component<IPropsPageSINavbar, IStatePageSINa
                                 <li
                                     style={{
                                         cursor: "pointer",
-                                        color: "#ffffff",
                                         display: "inline-block",
                                         zoom: 1,
                                         verticalAlign: "middle",
@@ -89,20 +100,30 @@ export class SINavbar extends React.Component<IPropsPageSINavbar, IStatePageSINa
                                         boxSizing: "border-box",
 
                                     }}>
-
-                                    <a>
+                                    <a
+                                        style={{
+                                            color: "#ffffff",
+                                            padding: ".5em 0.4em",
+                                            display: "block",
+                                            whiteSpace: "nowrap",
+                                            lineHeight: 1.6,
+                                            fontSize: "16px"
+                                        }}>
                                         <b> Help </b>
                                     </a>
                                 </li>
-
-
                             </ul>
                         </div>
                     </div>
                 </div>
-
-
             </div>
+
         );
+    }
+
+    render() {
+        if (this.props.MobileMode)
+            return this.getMobile();
+        return this.getDesktop();
     }
 }

@@ -1,21 +1,27 @@
 import React from "react";
 
 
-export interface IPropsPageSINavbarLoggedIn {
+export interface IPropsSINavbarLoggedIn {
+    MobileMode: boolean
+}
+
+export interface IStateSINavbarLoggedIn{
 
 }
 
-export interface IStatePageSINavbarLoggedIn {
-
-}
-
-export class SINavbarLoggedIn extends React.Component<IPropsPageSINavbarLoggedIn, IStatePageSINavbarLoggedIn> {
-    constructor(props: IPropsPageSINavbarLoggedIn) {
+export class SINavbarLoggedIn extends React.Component<IPropsSINavbarLoggedIn, IStateSINavbarLoggedIn> {
+    constructor(props: IPropsSINavbarLoggedIn) {
         super(props);
     }
 
-    render() {
+    private getMobile(){
         return (
+            <div></div>
+        );
+    }
+
+    private getDesktop(){
+        return(
             <div
                 style={{
                     textAlign: "center",
@@ -133,7 +139,6 @@ export class SINavbarLoggedIn extends React.Component<IPropsPageSINavbarLoggedIn
                                     </a>
                                 </li>
 
-
                                 <li
                                     style={{
                                         cursor: "pointer",
@@ -192,6 +197,13 @@ export class SINavbarLoggedIn extends React.Component<IPropsPageSINavbarLoggedIn
                     </div>
                 </div>
             </div>
+
         );
+    }
+
+    render() {
+        if (this.props.MobileMode)
+            return this.getMobile();
+        return this.getDesktop();
     }
 }

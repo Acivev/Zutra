@@ -1,5 +1,7 @@
 import React from "react";
+import {SINavbar} from "../../single/SINavbar";
 import {SINavbarLoggedIn} from "../../single/SINavbarLoggedIn";
+import {SINavbarAdmin} from "../../single/SINavbarAdmin";
 import {SICards} from "../../single/SICards";
 import {SIHelp} from "../../single/SIHelp";
 import {SILogin} from "../../single/SILogin";
@@ -21,13 +23,16 @@ export class TLMain extends React.Component<IPropsTLMain, IStateTLMain> {
     render() {
         return (
             <div>
-                {/*<SINavbar/>*/}
-                <SINavbarLoggedIn/>
-                {/*<SINavbarAdmin/>*/}
-                <SICards/>
-                <SIMode/>
-                <SIHelp/>
-                <SILogin/>
+                {/* TODO Finish First AdminPage, Then the others.*/}
+
+                    {/*<SINavbar MobileMode={false}/>*/}
+                    {/*<SINavbarLoggedIn MobileMode={false}/>*/}
+                    {/*TODO Lambda Check :D*/}
+                    <SINavbarAdmin MobileMode={false}/>
+                    {/*<SICards/>*/}
+                    <SIMode/>
+                    {/*<SIHelp/>*/}
+                    <SILogin/>
             </div>
         );
     }
